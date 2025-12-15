@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Tareas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+
+<h1 class="titulo">Gestor de Tareas</h1>
+
+  <div class="app">
+
+    <form id="taskForm" class="formulario">
+      <input type="hidden" id="taskId">
+
+      <label>Fecha</label>
+      <input type="date" id="fecha" required>
+
+      <label>Materia</label>
+      <input type="text" id="materia" required>
+
+      <label>Prioridad</label>
+      <select id="prioridad">
+        <option value="High">Alta</option>
+        <option value="Medium">Media</option>
+        <option value="Low">Baja</option>
+      </select>
+
+      <label>Título</label>
+      <input type="text" id="titulo" required>
+
+      <label>Descripción</label>
+      <textarea id="descripcion" rows="3" required></textarea>
+
+      <button type="submit">Guardar</button>
+    </form>
+
+    <div class="panel">
+      <div class="filtros">
+        <select id="filterPrioridad">
+          <option value="">Todas</option>
+          <option value="High">Alta</option>
+          <option value="Medium">Media</option>
+          <option value="Low">Baja</option>
+        </select>
+
+        <select id="orderFecha">
+          <option value="asc">Fecha ↑</option>
+          <option value="desc">Fecha ↓</option>
+        </select>
+      </div>
+
+      <div id="tasksContainer"></div>
+    </div>
+
+  </div>
+
+<script src="json.js"></script>
+</body>
+</html>

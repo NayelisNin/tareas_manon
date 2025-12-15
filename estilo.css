@@ -1,0 +1,216 @@
+/* ===== RESET & TIPOGRAFÍA ===== */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: #d2d8e3;
+  color: #2f3542;
+}
+
+/* ===== TÍTULO ===== */
+.titulo {
+  text-align: center;
+  margin-bottom: 26px;
+  font-size: 23px;
+  font-weight: 600;
+  color: #1f3c88;
+}
+
+/* ===== LAYOUT ===== */
+.app {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+/* ===== FORMULARIO ===== */
+.formulario {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  border-top: 6px solid #1f9aa5;
+}
+
+.formulario label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 12px;
+  display: block;
+  color: #34495e;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  padding: 9px 11px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccd6e0;
+  font-size: 14px;
+  background: #f9fbfd;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: #1f9aa5;
+}
+
+.formulario textarea {
+  resize: none;
+}
+
+.formulario button {
+  margin-top: 18px;
+  padding: 10px;
+  background: #1f3c88;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.formulario button:hover {
+  background: #162e63;
+}
+
+/* ===== PANEL ===== */
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== FILTROS ===== */
+.filtros {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.filtros select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccd6e0;
+  background: #ffffff;
+}
+
+/* ===== TARJETAS DE TAREAS ===== */
+.task {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+  border-left: 5px solid #1f9aa5;
+  transition: transform 0.2s;
+}
+
+.task:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== PRIORIDAD ===== */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.high {
+  background: #ffd6d6;
+  color: #a30000;
+}
+
+.medium {
+  background: #fff2c2;
+  color: #8a6d00;
+}
+
+.low {
+  background: #d9f2e6;
+  color: #1e7f5c;
+}
+
+/* ===== TEXTO ===== */
+.task h4 {
+  margin: 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f3c88;
+}
+
+.task p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== DESCRIPCIÓN ===== */
+.task-desc {
+  margin-top: 6px;
+  color: #555;
+  line-height: 1.5;
+  max-height: 42px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.task-desc.expandida {
+  max-height: 500px;
+}
+
+/* ===== VER MÁS ===== */
+.ver-mas {
+  background: none;
+  border: none;
+  color: #1f9aa5;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 6px;
+}
+
+.ver-mas:hover {
+  text-decoration: underline;
+}
+
+/* ===== ACCIONES ===== */
+.acciones {
+  margin-top: 10px;
+}
+
+.acciones button {
+  background: #eef3f8;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 13px;
+  color: #34495e;
+}
+
+.acciones button:hover {
+  background: #dfe7ef;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
