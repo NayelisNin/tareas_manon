@@ -6,6 +6,12 @@ const filtroPrioridad = document.getElementById("filterPrioridad");
 const ordenFecha = document.getElementById("orderFecha");
 const taskIdInput = document.getElementById("taskId");
 
+const prioridadTexto = {
+  High: "Alta",
+  Medium: "Media",
+  Low: "Baja"
+};
+
 function guardar() {
   localStorage.setItem("tareas", JSON.stringify(tareas));
 }
@@ -58,13 +64,19 @@ function mostrar() {
     div.className = "task";
 
     div.innerHTML = `
-      <span class="badge ${t.prioridad.toLowerCase()}">${t.prioridad}</span>
+<span class="badge ${t.prioridad.toLowerCase()}">
+  ${prioridadTexto[t.prioridad]}
+</span>
       <p><strong>${t.fecha}</strong> - ${t.materia}</p>
       <h4>${t.titulo}</h4>
 
-      <p class="task-desc">
-        ${t.descripcion}
-      </p>
+      <p class="task-desc collapsed" id="desc-${t.id}">
+  ${t.descripcion}
+</p>
+
+<button class="ver-mas" onclick="toggleDescripcion(${t.id})">
+  Ver más
+</button>
 
       <div class="acciones">
         <button onclick="editar(${t.id})">Editar</button>
@@ -90,6 +102,21 @@ function eliminar(id) {
   tareas = tareas.filter(t => t.id !== id);
   guardar();
   mostrar();
+}
+
+function toggleDescripcion(id) {
+  const desc = document.getElementById("desc-" + id);
+  const btn = desc.nextElementSibling;
+
+  if (desc.classList.contains("collapsed")) {
+    desc.classList.remove("collapsed");
+    desc.classList.add("expanded");
+    btn.textContent = "Ver menos";
+  } else {
+    desc.classList.remove("expanded");
+    desc.classList.add("collapsed");
+    btn.textContent = "Ver más";
+  }
 }
 
 mostrar();
